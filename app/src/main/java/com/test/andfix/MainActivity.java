@@ -2,6 +2,7 @@ package com.test.andfix;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -36,15 +37,16 @@ public class MainActivity extends AppCompatActivity {
      * 初始化文件
      */
     private void initDir() {
-        //设置文件路径
+        //设置文件路径  oppo  /storage/emulated/0/Android/data/com.test.andfix/cache/apatch
         mFileDir = getExternalCacheDir().getAbsolutePath() + "/apatch";
         //创建文件夹
         File file = new File(mFileDir);
 
         //当文件为null或者不存在时 创建文件
-        if (file == null || file.exists()) {
+        if (file == null || !file.exists()) {
             file.mkdir();
         }
+        Log.d("error", mFileDir.toString());
     }
 
 
@@ -80,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
      * @return
      */
     private String getPatchName() {
-        return mFileDir.concat("test").concat(FILE_END);
+        return mFileDir.concat("andfix").concat(FILE_END);
     }
 
 

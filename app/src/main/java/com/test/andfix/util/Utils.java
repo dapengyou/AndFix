@@ -29,7 +29,7 @@ public class Utils {
     }
 
     public static void printLog() {
-        String error = null;
+        String error = "fix bug";
         Log.d("utils", error);//log输出的字符串为空会报异常
     }
 }

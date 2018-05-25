@@ -41,7 +41,7 @@ public class AndFixPatchManager {
             if (mPatchManager != null) {
                 mPatchManager.addPatch(patch);
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
